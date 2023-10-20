@@ -1,24 +1,18 @@
-package one.digitalinnovation.labpadroesprojetojavaspring.controllers;
+package dio.padroes.java.spring.controller;
 
-import one.digitalinnovation.labpadroesprojetojavaspring.entities.Products;
-import one.digitalinnovation.labpadroesprojetojavaspring.services.ProductsService;
+import dio.padroes.java.spring.entities.Products;
+import dio.padroes.java.spring.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * Esse {@link RestController} representa nossa <b>Facade</b>, pois abstrai toda
- * a complexidade de integrações (Banco de Dados H2 e API do ViaCEP) em uma
- * interface simples e coesa (API REST).
- *
- * @author didifive
- */
+
 @RestController
 @RequestMapping("api/v1/products")
-public class ProductsRestController {
+public class ProdRestController {
 
     @Autowired
-    private ProductsService productsService;
+    private ProductService productsService;
 
     @GetMapping
     public ResponseEntity<Iterable<Products>> findAll() {

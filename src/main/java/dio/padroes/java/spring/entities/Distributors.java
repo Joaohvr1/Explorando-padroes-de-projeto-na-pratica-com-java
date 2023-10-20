@@ -36,11 +36,11 @@ public class Distributors {
         this.comments = comments;
     }
 
-    public Addresses getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(Addresses address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 

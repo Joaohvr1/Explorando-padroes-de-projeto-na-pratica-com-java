@@ -18,17 +18,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Implementação da <b>Strategy</b> {@link ProductsService}, a qual pode ser
- * injetada pelo Spring (via {@link Autowired}). Com isso, como essa classe é um
- * {@link Service}, ela será tratada como um <b>Singleton</b>.
- *
- * @author didifive
- */
 @Service
-public class ProductServiceImplements implements ProductsService {
+public class ProductServiceImplements implements ProductsRepository {
 
-    // Singleton: Injetar os componentes do Spring com @Autowired.
     @Autowired
     private ProductsRepository productsRepository;
     @Autowired
@@ -37,9 +29,6 @@ public class ProductServiceImplements implements ProductsService {
     private AddressRepository addressesRepository;
     @Autowired
     private ViaCepService viaCepService;
-
-    // Strategy: Implementar os métodos definidos na interface.
-    // Facade: Abstrair integrações com subsistemas, provendo uma interface simples.
 
     @Override
     public Iterable<Products> findAll() {

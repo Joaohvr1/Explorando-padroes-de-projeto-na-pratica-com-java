@@ -3,13 +3,13 @@ package dio.padroes.java.spring.services;
 import dio.padroes.java.spring.entities.Products;
 
 public class ProductService {
-    Iterable<Products> findAll();
+    public Iterable<Products> findAll();
 
-    Products findById(Long id);
+    public Products findById(Long id);
 
-    void insert(Products product);
+    public void insert(Products product);
 
-    void update(Long id, Products product);
+    public void update(Long id, Products product);
 
-    void delete(Long id);
+    public void delete(Long id);
 }
