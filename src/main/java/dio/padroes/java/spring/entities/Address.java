@@ -1,6 +1,6 @@
 package dio.padroes.java.spring.entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity(name = "Addresses")
 public class Address {

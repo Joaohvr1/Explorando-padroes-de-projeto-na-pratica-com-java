@@ -1,19 +1,12 @@
 package dio.padroes.java.spring.entities;
 
+import javax.persistence.*;
 import java.util.ArrayList;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.*;
-import jakarta.persistence.OneToMany;
 import java.util.List;
 
-
 @Entity(name = "Products")
-
 public class Products {
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long idProduct;

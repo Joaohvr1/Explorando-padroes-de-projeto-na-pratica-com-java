@@ -19,14 +19,14 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProductServiceImplements implements ProductsRepository {
+public class ProductServiceImplements implements ProductService {
 
     @Autowired
     private ProductsRepository productsRepository;
     @Autowired
     private DistributorsRepository distributorsRepository;
     @Autowired
-    private AddressRepository addressesRepository;
+    private AddressesRepository addressesRepository;
     @Autowired
     private ViaCepService viaCepService;
 
@@ -67,8 +67,8 @@ public class ProductServiceImplements implements ProductsRepository {
 
     private void insertDistributorWithZipCod(Distributors distributor) {
         String cep = distributor.getAddress().getCep();
-        Addresses address = addressesRepository.findById(cep).orElseGet(() -> {
-            Addresses newAddress = viaCepService.consultarCep(cep);
+        Address address = addressesRepository.findById(cep).orElseGet(() -> {
+            Address newAddress = viaCepService.consultarCep(cep);
             addressesRepository.save(newAddress);
             return newAddress;
         });

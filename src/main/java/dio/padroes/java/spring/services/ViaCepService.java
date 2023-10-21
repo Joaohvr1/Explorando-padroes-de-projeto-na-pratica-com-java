@@ -1,6 +1,6 @@
 package dio.padroes.java.spring.services;
 
-import org.springframework.boot.autoconfigure.amqp.RabbitConnectionDetails.Address;
+import dio.padroes.java.spring.entities.Address;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

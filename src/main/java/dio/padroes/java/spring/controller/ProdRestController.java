@@ -1,11 +1,11 @@
 package dio.padroes.java.spring.controller;
 
 import dio.padroes.java.spring.entities.Products;
-import dio.padroes.java.spring.services.ProductService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import dio.padroes.java.spring.services.ProductService;
 
 @RestController
 @RequestMapping("api/v1/products")
@@ -20,7 +20,7 @@ public class ProdRestController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Products> findById(@PathVariable Long id) {
+    ResponseEntity<Products> findById(@PathVariable Long id) {
         return ResponseEntity.ok(productsService.findById(id));
     }
 
